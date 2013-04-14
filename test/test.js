@@ -1,27 +1,35 @@
-/*global describe, it, before */
+/*global describe, beforeEach, it */
+'use strict';
+
 var path = require('path');
 var helpers = require('yeoman-generator').test;
-var assert = require('assert');
 
 describe('Jasmine generator test', function () {
-  before(helpers.before(path.join(__dirname, './temp')));
+  beforeEach(function (done) {
+    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+      if (err) {
+        return done(err);
+      }
 
-  it('every generator can be required without throwing', function () {
-    // not testing the actual run of generators yet
-    this.app = require('../app');
+      this.app = helpers.createGenerator('jasmine:app', [
+        '../../lib/generators/app'
+      ]);
+      done();
+    }.bind(this));
   });
 
-  // FIXME
-  it.skip('creates expected files', function () {
+  it('creates expected files', function (done) {
+    var expected = [
+      'spec/test.js',
+      '.bowerrc',
+      'bower.json',
+      'index.html'
+    ];
 
-    // Use helpers.assertFile() to help you test the output of your generator
-    //
-    // Example:
-    //
-    //    // check file exists
-    //    helpers.assertFile('app/model/post.js');
-    //    // Check content
-    //    helpers.assertFile('app/model/post.js', /Backbone\.model/);
-    it('should create expected files');
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFiles(expected);
+      done();
+    });
   });
 });
