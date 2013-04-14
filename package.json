@@ -1,11 +1,10 @@
 {
   "name": "generator-jasmine",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Yeoman generator for Jasmine",
   "keywords": [
     "yeoman-generator",
-    "yeoman",
-    "generator",
+    "scaffold",
     "unit",
     "test",
     "bdd"
@@ -18,13 +17,13 @@
     "url": "git://github.com/yeoman/generator-jasmine.git"
   },
   "scripts": {
-    "test": "mocha test/test-*.js"
+    "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "https://github.com/yeoman/generator/archive/master.tar.gz"
+    "yeoman-generator": "~0.10.5"
   },
   "devDependencies": {
-    "mocha": "~1.8.1"
+    "mocha": "~1.9.0"
   },
   "engines": {
     "node": ">=0.8.0"
