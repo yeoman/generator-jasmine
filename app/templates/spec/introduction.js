@@ -1,5 +1,3 @@
-
-
 // Jasmine Documentation: http://pivotal.github.com/jasmine/
 //
 // This introduction file is coming from Jasmine reposutory:

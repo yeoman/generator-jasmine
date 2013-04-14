@@ -1,18 +1,18 @@
-var path    = require('path');
+/*global describe, it, before */
+var path = require('path');
 var helpers = require('yeoman-generator').test;
-var assert  = require("assert");
+var assert = require('assert');
 
-describe('Jasmine generator test', function() {
+describe('Jasmine generator test', function () {
   before(helpers.before(path.join(__dirname, './temp')));
 
-  it('every generator can be required without throwing', function() {
+  it('every generator can be required without throwing', function () {
     // not testing the actual run of generators yet
     this.app = require('../app');
   });
 
-
   // FIXME
-  it.skip('creates expected files', function() {
+  it.skip('creates expected files', function () {
 
     // Use helpers.assertFile() to help you test the output of your generator
     //
@@ -23,6 +23,5 @@ describe('Jasmine generator test', function() {
     //    // Check content
     //    helpers.assertFile('app/model/post.js', /Backbone\.model/);
     it('should create expected files');
-
   });
 });
