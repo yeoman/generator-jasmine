@@ -1,4 +1,4 @@
-# Jasmine generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-jasmine.png?branch=master)](http://travis-ci.org/yeoman/generator-jasmine)
+# Jasmine generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-jasmine.svg?branch=master)](http://travis-ci.org/yeoman/generator-jasmine)
 
 
 ## Usage
