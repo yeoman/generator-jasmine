@@ -4,7 +4,6 @@
   "camelcase": true,
   "curly": true,
   "eqeqeq": true,
-  "es5": true,
   "esnext": true,
   "immed": true,
   "indent": 2,
@@ -13,10 +12,7 @@
   "noarg": true,
   "node": true,
   "quotmark": "single",
-  "regexp": true,
-  "smarttabs": true,
   "strict": true,
-  "trailing": true,
   "undef": true,
   "unused": true
 }
