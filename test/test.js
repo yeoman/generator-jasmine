@@ -20,10 +20,7 @@ describe('Jasmine generator test', function () {
 
   it('creates expected files', function (done) {
     var expected = [
-      'spec/test.js',
-      '.bowerrc',
-      'bower.json',
-      'index.html'
+      'spec/test.js'
     ];
 
     this.app.options['skip-install'] = true;
