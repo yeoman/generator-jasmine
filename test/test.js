@@ -2,32 +2,20 @@
 'use strict';
 var path = require('path');
 var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-assert');
 
 describe('Jasmine generator test', function () {
-  beforeEach(function (done) {
-    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
-      if (err) {
-        done(err);
-        return;
-      }
-
-      this.app = helpers.createGenerator('jasmine:app', [
-        '../../lib/generators/app'
-      ]);
-      done();
-    }.bind(this));
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/app'))
+      .inDir(path.join(__dirname, 'temp'))
+      .withOptions({'skip-install': true})
+      .on('end', done);
   });
 
-  it('creates expected files', function (done) {
-    var expected = [
+  it('creates expected files', function () {
+    assert.file([
       'test/spec/test.js',
       'test/index.html'
-    ];
-
-    this.app.options['skip-install'] = true;
-    this.app.run(function () {
-      helpers.assertFile(expected);
-      done();
-    });
+    ]);
   });
 });
