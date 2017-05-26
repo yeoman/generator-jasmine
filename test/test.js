@@ -1,18 +1,18 @@
 /*global describe, beforeEach, it */
 'use strict';
-var path = require('path');
-var helpers = require('yeoman-generator').test;
-var assert = require('yeoman-assert');
+const path = require('path');
+const helpers = require('yeoman-test');
+const assert = require('yeoman-assert');
 
-describe('Jasmine generator test', function () {
-  before(function (done) {
+describe('Jasmine generator test', () => {
+  before(done => {
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(__dirname, 'temp'))
       .withOptions({'skip-install': true})
       .on('end', done);
   });
 
-  it('creates expected files', function () {
+  it('creates expected files', () => {
     assert.file([
       'test/spec/test.js',
       'test/index.html'

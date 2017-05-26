@@ -21,11 +21,12 @@
     "test": "mocha --reporter spec"
   },
   "dependencies": {
-    "yeoman-generator": "^0.20.1"
+    "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
     "mocha": "*",
-    "yeoman-assert": "^2.0.0"
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
   },
   "engines": {
     "node": ">=0.10.0",

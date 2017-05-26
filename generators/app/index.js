@@ -1,18 +1,13 @@
 'use strict';
+const path = require('path');
+const Generator = require('yeoman-generator');
 
-var path = require('path');
-var generators = require('yeoman-generator');
-
-module.exports = generators.Base.extend({
-  constructor: function () {
-    generators.Base.apply(this, arguments);
-  },
-
-  configuring: function () {
+module.exports = class extends Generator {
+  configuring() {
     this.config.save();
-  },
+  }
 
-  writing: function () {
+  writing() {
     this.fs.copy(
       this.templatePath('test.js'),
       this.destinationPath('test/spec/test.js')
@@ -22,18 +17,15 @@ module.exports = generators.Base.extend({
       this.templatePath('index.html'),
       this.destinationPath('test/index.html')
     );
-  },
+  }
 
-  install: function () {
+  install() {
     if (this.options['skip-install']) {
       return;
     }
 
-    var dependencies = [
+    this.bowerInstall([
       'jasmine'
-    ];
-
-    this.bowerInstall(dependencies, {saveDev: true});
+    ], {saveDev: true});
   }
-
-});
+}
