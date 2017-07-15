@@ -20,11 +20,13 @@ module.exports = class extends Generator {
   }
 
   install() {
-    if (this.options['skip-install']) {
-      return;
+    if (!this.options['skip-install']) {
+      this.installDependencies({
+        bower: false
+      });
     }
 
-    this.bowerInstall([
+    this.npmInstall([
       'jasmine'
     ], {saveDev: true});
   }
