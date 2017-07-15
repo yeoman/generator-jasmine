@@ -29,8 +29,7 @@
     "yeoman-test": "^1.6.0"
   },
   "engines": {
-    "node": ">=0.10.0",
-    "npm": ">=1.2.10"
+    "node": ">=4"
   },
   "licenses": [
     {
